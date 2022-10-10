@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
 
 app.use(farmerRouter);
 
-const MONGO_URL = process.env.MONGODB_URI || "mongodb+srv://dlip:123@cluster0.qwketrx.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL = process.env.MONGODB_URI || "mongodb+srv://dlip:12345@cluster0.qwketrx.mongodb.net/?retryWrites=true&w=majority";
 
 
  
@@ -32,8 +32,7 @@ async function StartServer(){
     //useFindAndModify:false,
    //  useCreateIndex:true,
      useUnifiedTopology:true,
-   });
-   
+   });  
    app.listen(PORT,()=>{
       console.log(`listening ar port ${PORT}`);
      })
