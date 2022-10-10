@@ -1,13 +1,16 @@
 const express= require('express');
 const mongoose = require('mongoose')
+require("dotenv").config();
+
+
 const {farmerRouter} =require('./routes/alldata/alldata.route')
-const PORT= 7000
+const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(express.json());
 
 app.use(farmerRouter)
 
-const MONGO_URL="mongodb://127.0.0.1:27017/farmer"
+const MONGO_URL = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/test";
  
 
 
