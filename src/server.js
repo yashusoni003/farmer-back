@@ -8,9 +8,16 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(express.json());
 
+
+app.get('/',(req,res)=>{
+  res.send("hii there");
+})
+
 app.use(farmerRouter)
 
 const MONGO_URL = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/test";
+
+
  
 
 
