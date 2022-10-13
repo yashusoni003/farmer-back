@@ -1,9 +1,14 @@
-  const {getfarmer,createfarmer} = require('../../model/allData/alldata.model')
+  const {getfarmer,createfarmer,getallfarmer} = require('../../model/allData/alldata.model')
   
   
   const getFarmerById =async (req,res)=>{
-       const userId = req.body.userId;
+      const userId=req.params.id;
+     //  const userId = req.body.userId;
        const result = await getfarmer(userId);
+       res.status(200).json(result);
+  }
+  const getAllFarmers =async (req,res)=>{
+       const result = await getallfarmer();
        res.status(200).json(result);
   }
 
@@ -15,7 +20,9 @@
    
   }
 
+
   module.exports={
     getFarmerById,
-    postFarmer
+    postFarmer,
+    getAllFarmers
   }

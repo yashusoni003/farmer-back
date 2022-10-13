@@ -54,7 +54,6 @@ const farmerInfoSchema = new mongoose.Schema({
     },
     email:{
      type:String,
-     required: true  
     }
  },
  farmInfo:{
@@ -77,7 +76,6 @@ const farmerInfoSchema = new mongoose.Schema({
     },
     upin:{
         type:String,
-        required:true
     }
 },
   yeildInfo:{
@@ -135,14 +133,11 @@ const farmerInfoSchema = new mongoose.Schema({
         type:String,
         required:true
     }
-  }
+  } 
 }) 
 
 
-       
-// personInfoSchema.pre('save',async function(next){
-//   next();
-// })
+
 
 module.exports =  mongoose.model("farmerInfo",farmerInfoSchema);
 
