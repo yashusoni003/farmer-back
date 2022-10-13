@@ -18,7 +18,7 @@ app.use(farmerRouter);
 app.use(landRouter);
 app.use(marketRouter);
 
-const MONGO_URL = process.env.MONGODB_URI || "mongodb://localhost:2027";
+const MONGO_URL = process.env.MONGODB_URI || "mongodb+srv://dlip:12345@cluster0.qwketrx.mongodb.net/?retryWrites=true&w=majority";
 
 
 mongoose.connection.once('open',()=>{
