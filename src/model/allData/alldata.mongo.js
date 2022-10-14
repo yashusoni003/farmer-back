@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const farmerInfoSchema = new mongoose.Schema({
+  profilePic:String,
   userId:{
     type:String,
     required:true

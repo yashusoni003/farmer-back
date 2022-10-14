@@ -11,7 +11,7 @@ return result;
 }
 const createfarmer= async(farmerInfo)=>{
     console.log("creating farmer");
-    const result = await farmerdb.updateOne(farmerInfo,farmerInfo,{upsert:true});
+    const result = await farmerdb.updateOne({userId:farmerInfo.userId},farmerInfo,{upsert:true});
      return result;
 }
 
