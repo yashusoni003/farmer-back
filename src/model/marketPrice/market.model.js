@@ -1,7 +1,7 @@
 const marketDB = require('./market.mongo')
 
- const getMarketPrice=async ()=>{
-     const result =  await marketDB.find({},{"__v":0,"_id":0}) ;
+ const getMarketPrice=async (place)=>{
+     const result =  await marketDB.findOne({yardname:place},{"__v":0,"_id":0,yardname:0});
     return result; 
 }
 
