@@ -47,7 +47,8 @@ const farmerInfoSchema = new mongoose.Schema({
   dob:{
     type:String,
     required:true
-  }
+  },
+  pincode:String,
   },
   comminfo:{
     mobileNumber:{

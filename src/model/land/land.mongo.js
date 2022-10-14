@@ -1,33 +1,19 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const landInfoSchema = new mongoose.Schema({
-  district:{
-    type:String
-  },
-  taluka:{
-    type:String
-  },
-  village:{
-    type:String
-  },
-  surveyNumber:{
-    type:Number
-  },
-  UPIN:Number,
-  landDetails:{
-    totalArea:{
-        hect:Number,
-        area:Number,
-        sqMt:Number
-    },
-    landUse:String,
-    owner:String,
-  }
-}) 
+  landTitle: String,
+  district: String,
+  taluka: String,
+  village: String,
+  oldSurveyNumber: String,
+  newSurveyNumber: String,
+  UPIN: String,
+  totalArea: String,
+  landUse: String,
+  owner: String,
+  tenure:String,
+  shape:String,
+  totalAssesment:String
+});
 
-
-
-
-module.exports =  mongoose.model("landInfo",landInfoSchema);
-
-
+module.exports = mongoose.model("landInfo", landInfoSchema);

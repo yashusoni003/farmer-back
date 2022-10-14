@@ -1,8 +1,7 @@
 const landDb =require('./land.mongo')
 
- const getLandDetails=async (body)=>{
-    const {district,taluka,village,surveyNumber,UPIN}=body;
-     const result = UPIN ? await landDb.find({UPIN:UPIN},{"_id":0,"__v":0}) :await landDb.find({district,taluka,village,surveyNumber},{"_id":0,"__v":0});
+ const getLandDetails=async (UPIN)=>{
+     const result = await landDb.findOne({UPIN:UPIN},{"_id":0,"__v":0});
     return result; 
 }
 

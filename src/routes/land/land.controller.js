@@ -2,8 +2,9 @@
   
 const httpGetLandDetails =async (req,res)=>{
     const body=req.body;
+    const upin =req.params.upin;
    //  const userId = req.body.userId;
-     const result = await getLandDetails(body);
+     const result = await getLandDetails(upin);
      res.status(200).json(result);
 }
 
