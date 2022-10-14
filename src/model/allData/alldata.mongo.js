@@ -5,6 +5,7 @@ const farmerInfoSchema = new mongoose.Schema({
     type:String,
     required:true
   },
+  farmId:String,
   perinfo:{
   firstName:{
     type:String,
@@ -56,20 +57,9 @@ const farmerInfoSchema = new mongoose.Schema({
      type:String,
     }
  },
- farmInfo:{
-
-    district:{
-        type:String,
-        required:true
-    },
-    taluka:{
-        type:String,
-        required:true
-    },
-    village:{
-        type:String,
-        required:true
-    },
+ farmInfo:[{
+    title:String,
+    shape:String,
     surveyNum:{
         type:String,
         required:true
@@ -77,7 +67,7 @@ const farmerInfoSchema = new mongoose.Schema({
     upin:{
         type:String,
     }
-},
+}],
   yeildInfo:{
     landTitle:{
         type:String,
