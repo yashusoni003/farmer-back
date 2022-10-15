@@ -1,4 +1,4 @@
-  const {getLandDetails,postLandDetails}=require('../../model/land/land.model')
+  const {getLandDetails,postLandDetails,getLandByNameDetails}=require('../../model/land/land.model')
   
 const httpGetLandDetails =async (req,res)=>{
     const body=req.body;
@@ -16,7 +16,15 @@ const httpPostLandDetails=async (req,res)=>{
  
 }
 
+const httpGetLandByNameDetails=async (req,res)=>{
+  const data = req.body;
+  const result = await getLandByNameDetails(data);
+  res.status(201).json(result);
+ 
+}
+
 module.exports={
     httpGetLandDetails,
-    httpPostLandDetails
+    httpPostLandDetails,
+    httpGetLandByNameDetails
 }

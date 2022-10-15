@@ -18,7 +18,7 @@ const farmerInfoSchema = new mongoose.Schema({
   },
   lastName:{
     type:String,
-    required:true
+    required:true 
   },
   adhar :{
     type:String,
