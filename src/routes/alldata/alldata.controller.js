@@ -1,4 +1,4 @@
-  const {getfarmer,createfarmer,getallfarmer} = require('../../model/allData/alldata.model')
+  const {getfarmer,createfarmer,getallfarmer,findregfarmer,getMobileById} = require('../../model/allData/alldata.model');
   
   
   const getFarmerById =async (req,res)=>{
@@ -20,9 +20,24 @@
    
   }
 
+  const getNofarmers= async(req,res)=>{
+    const state=req.params.state;
+    const dist=req.params.dist;
+    const result = await findregfarmer(state,dist);
+    res.status(201).json(result);
+  }
+  const httpgetMobileById= async(req,res)=>{
+    const id=req.params.id;
+    const result = await getMobileById(id);
+    res.status(201).json(result);
+  }
+  
+
 
   module.exports={
     getFarmerById,
     postFarmer,
-    getAllFarmers
+    getAllFarmers,
+    getNofarmers,
+    httpgetMobileById
   }

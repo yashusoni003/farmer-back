@@ -15,4 +15,14 @@ const createfarmer= async(farmerInfo)=>{
      return result;
 }
 
-module.exports = {getfarmer,createfarmer,getallfarmer}
+const findregfarmer=async(state,dist)=>{
+    const result = await farmerdb.find({},{__v:0,_id:0}).count();
+    return result;
+}
+
+const getMobileById=async(id)=>{
+    const result = await farmerdb.findOne({farmId:id},{__v:0,_id:0});
+    return result.userId;
+}
+
+module.exports = {getfarmer,createfarmer,getallfarmer,findregfarmer,getMobileById}

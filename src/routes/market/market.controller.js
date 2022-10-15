@@ -1,6 +1,7 @@
 const {getMarketPrice,postMarketPrice}  =require("../../model/marketPrice/market.model")
 
 const httpGetMarketPrice =async (req,res)=>{
+  
   const place=req.params.place;
      const result = await getMarketPrice(place);
      res.status(200).json(result);
