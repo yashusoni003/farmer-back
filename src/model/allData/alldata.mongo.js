@@ -47,8 +47,7 @@ const farmerInfoSchema = new mongoose.Schema({
   dob:{
     type:String,
     required:true
-  },
-  pincode:String,
+  }
   },
   comminfo:{
     mobileNumber:{
@@ -70,7 +69,7 @@ const farmerInfoSchema = new mongoose.Schema({
         type:String,
     }
 }],
-  yeildInfo:{
+  yeildInfo:[{
     landTitle:{
         type:String,
         required:true
@@ -103,7 +102,7 @@ const farmerInfoSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-  },
+  }],
   bankInfo:{
     bankName:{
         type:String,
@@ -125,7 +124,34 @@ const farmerInfoSchema = new mongoose.Schema({
         type:String,
         required:true
     }
-  } 
+  } ,
+  Qualificationinfo:{
+    otherQualification:String,
+tenthPer:String,
+twelvePer:String
+  },
+  creditinfo:[{
+    LoanType:String,
+    accountNumber:String,
+    bankName:String,
+    ifsc:String,
+    landTitle:String,
+    loanSize:String,
+    perpose:String,
+    upin:String,
+  }],
+  insuranceInfo:{
+applieddate:String,
+area:String,
+certificateNumber:String,
+companyName:String,
+cropName:String,
+cropSeason:String,
+fieldName:String,
+insuranceType:String,
+receiptNumber:String,
+upin:String
+  },
 }) 
 
 

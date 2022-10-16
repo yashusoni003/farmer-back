@@ -3,7 +3,7 @@ const {httpGetLandDetails,httpPostLandDetails,httpGetLandByNameDetails} =require
 const landRouter = Router();
 
 landRouter.get('/getland/:upin',httpGetLandDetails);
-landRouter.get('/getlandbyname',httpGetLandByNameDetails);
+landRouter.post('/getlandbyname',httpGetLandByNameDetails);
 landRouter.post('/postland',httpPostLandDetails);
 
 module.exports = {
