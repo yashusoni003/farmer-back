@@ -5,7 +5,7 @@ require("dotenv").config();
 const {farmerRouter} =require('./routes/alldata/alldata.route')
 const {landRouter} = require('./routes/land/land.route')
 const{marketRouter} =require('./routes/market/market.route')
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 7000;
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -29,12 +29,8 @@ mongoose.connection.once('open',()=>{
  })
 
 async function StartServer(){
-   await mongoose.connect(MONGO_URL,{
-     useNewUrlParser:true,
-    //useFindAndModify:false,
-   //  useCreateIndex:true,
-     useUnifiedTopology:true,
-   });  
+   await mongoose.connect(MONGO_URL);
+
    app.listen(PORT,()=>{
       console.log(`listening ar port ${PORT}`);
      })

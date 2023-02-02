@@ -9,5 +9,19 @@
   },
   "scripts": {
     "start": "nodemon src/server.js"
-  }
+  },
+  "name": "hack-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlipahir/hack-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlipahir/hack-backend/issues"
+  },
+  "homepage": "https://github.com/dlipahir/hack-backend#readme",
+  "description": ""
 }

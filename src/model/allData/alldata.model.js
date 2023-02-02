@@ -25,4 +25,26 @@ const getMobileById=async(id)=>{
     return result.userId;
 }
 
-module.exports = {getfarmer,createfarmer,getallfarmer,findregfarmer,getMobileById}
+const getfarmerByFarmerId = async(farmerId) =>{
+
+    const result = await farmerdb.findOne({farmId:farmerId},{_id:0,__v:0});
+
+    return result
+}
+
+
+const updateFarmer = async(id,data) =>{
+
+console.log(data)
+    const result = await farmerdb.findOneAndUpdate({
+        userId:id
+    },
+      data,{
+        upsert:true
+      } 
+     )
+     console.log(result)
+  return result;
+}
+
+module.exports = {getfarmer,createfarmer,getallfarmer,findregfarmer,getMobileById,getfarmerByFarmerId,updateFarmer}
